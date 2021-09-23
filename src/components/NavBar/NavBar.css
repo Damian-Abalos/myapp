@@ -1,0 +1,20 @@
+nav{
+  background-image: linear-gradient(rgb(224, 248, 255), rgb(255, 255, 255));
+}
+ul{
+  width: 50%;
+  margin: 0 auto;
+  padding: 1em;
+  display: flex;
+  justify-content: space-around;
+}
+li{
+  background-image: linear-gradient(rgb(255, 255, 255), rgb(224, 248, 255));
+  list-style: none;
+  padding: 5px;
+  border: solid 1px black;
+}
+a{
+  color: black;
+  text-decoration: none;
+}
