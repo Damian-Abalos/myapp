@@ -1,5 +1,5 @@
 import React from "react";
-
+import './NavBar.css';
 const NavBar = () => {
 
     // let apagado = true

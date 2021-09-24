@@ -1,4 +1,3 @@
-import './components/NavBar/NavBar.css'
 import './App.css';
 // import DynamicObjects from "./components/DynamicObjects"
 // import SpreadOperators from "./components/SpreadOperator/SpreadOperators";
