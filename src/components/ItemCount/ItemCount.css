@@ -1,0 +1,17 @@
+#ItemCount{
+    width: 40%;
+    display: flex;
+    margin: 1em auto;
+    justify-content: center;
+    align-items: center;
+    border: black 1px solid;
+}
+#ItemCount button{
+    width: 10%;
+    border: none;
+}
+#ItemCount p{
+    width: 80%;
+    text-align: center;
+    margin: 0;
+}

@@ -1,14 +1,14 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCoffee } from "@fortawesome/free-solid-svg-icons";
+import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 
 const CartWidget = (Icon) => {
     return(
-        <span style={{fontSize:"50px", color:"blue"}}>
+        <span style={{fontSize:"50px"}}>
             <FontAwesomeIcon 
-                icon={faCoffee}
+                icon={faCartPlus}
                 color="black"
-                size="lg"/>
+                size="sm"/>
         </span>
         
     )
