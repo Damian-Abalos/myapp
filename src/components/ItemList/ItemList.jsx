@@ -125,7 +125,8 @@ const ItemList = ({ items }) => {
 
   return (
     <div className="row">
-      {user &&
+      {
+      // user &&
         productos.map((producto) => (
           <Item
             key={producto.id}
