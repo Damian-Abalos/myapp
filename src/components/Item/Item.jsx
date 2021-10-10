@@ -1,4 +1,5 @@
 import React from "react";
+
 import ItemCount from "../ItemCount/ItemCount";
 import "./Item.css"
 
@@ -14,7 +15,9 @@ const Item = ({ nombre, stock, img, price }) => {
       <div className="card miCard">
         <img src={img} className="card-img-top" alt="..." />
         <div className="card-body">
+          {/* <link to={`/productos/${id}`}>  */}
           <h3 className="card-title">{nombre}</h3>
+          {/* </link> */}
           <p className="card-text"></p>
           <p>stock:{stock}</p> 
           <span>${price}</span>

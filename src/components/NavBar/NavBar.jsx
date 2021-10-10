@@ -1,12 +1,11 @@
-// import React from "react";
+import React from "react";
 import './NavBar.css';
 import CartWidget from "../CartWidget/CartWidget";
-import React, { useState } from 'react';
 
 
 
 
-const NavBar = ({changeBgColor}) => {
+const NavBar = () => {
 
     return (
         <div>

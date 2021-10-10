@@ -94,48 +94,47 @@ const ItemList = ({ items }) => {
       img: "https://damian-abalos.github.io/casa-vegana/img/10.jpg",
     },
   ];
-  const [user, setUser] = useState(null);
 
-  // const getAllProducts = async () => {
-  //     try {
-  //       const respuesta = await productos;
-  //       const {} = respuesta;
-  //       setUser();
-  //       console.log(respuesta);
-  //       setUser(respuesta);
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   };
+  const [products, setProducts] = useState([]);
 
-  // const getAllProducts = new Promise((resolve, reject) => {
-  //   setTimeout(() => {
-  //     resolve(productos);
-  //   }, 3000);
-  // });
+  const getProducts = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(productos);
+    }, 3000);
+  });
 
-  // useEffect(() => {
-  //   // fetch(productos)
-  //   //   .then((res) => res)
-  //   //   .catch((err) => console.log(err))
-  //   //   .then((res) => console.log(res));
+  const getProductsFromDB = async () => {
+    try {
+      const result = await getProducts;
+      setProducts(result);
+      console.log(result);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-  //   getAllProducts();
-  // }, []);
+  useEffect(() => {
+    getProductsFromDB();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className="row">
       {
-      // user &&
-        productos.map((producto) => (
-          <Item
-            key={producto.id}
-            nombre={producto.nombre}
-            stock={producto.stock}
-            img={producto.img}
-            price={producto.precio}
-          />
-        ))}
+        products && products.length ? (
+          products.map((producto) => (
+            <Item
+              key={producto.id}
+              nombre={producto.nombre}
+              stock={producto.stock}
+              img={producto.img}
+              price={producto.precio}
+            />
+          ))
+        ) : (
+          <p className="text-light text-center">Cargando productos...</p>
+        )
+      }
     </div>
   );
 };

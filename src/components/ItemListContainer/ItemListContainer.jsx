@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react'
-import './ItemListContainer.css'
+import React from 'react'
 
-import ItemCount from '../ItemCount/ItemCount'
+import './ItemListContainer.css'
 import Item from '../Item/Item';
 import ItemList from '../ItemList/ItemList';
 
@@ -10,7 +9,7 @@ function ItemListContainer({greeting}) {
         <div>
             <h2>{greeting}</h2>
             <div className="container-fluid">
-                <ItemList item={Item}/>
+            <ItemList item={Item}/>
             </div>
         </div>
     )
