@@ -2,9 +2,16 @@ import React from 'react'
 
 const ItemDetail = ({id}) => {
     return (
-        <section className="">
+        <div className="ItemDetal">
             <h3 className="text-light">Item con id {id}</h3>
-        </section>
+            <div>
+                {/* <h4>{nombre}</h4>
+                <img src={img} alt="..." />
+                <p>{descripcion}</p> */}
+            </div>
+            
+
+        </div>
     )
 }
 
