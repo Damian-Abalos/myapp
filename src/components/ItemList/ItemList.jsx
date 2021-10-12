@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 
 import Item from "../Item/Item";
 
@@ -160,12 +159,11 @@ const ItemList = ({ items }) => {
           (filtro) => categorias.toLowerCase() === filtro.tipo.toLowerCase()
         )
       : products;
-  // console.log(filtro)
 
 
   return (
     <div className="mt-3">
-      <div className="text-center d-flex align-items-center">
+      <div className="text-center d-flex align-items-center justify-content-center">
         <p className="text-light m-0">Filtrar productos</p>
         <ul>
           <li onClick={() => filtrarTodos()} style={{ cursor: "pointer" }}>
@@ -183,16 +181,10 @@ const ItemList = ({ items }) => {
           <li onClick={() => filtrarPostres()} style={{ cursor: "pointer" }}>
             Postres
           </li>
-
-          {/* <Link to={`/productos/toques`}><li>Toques</li></Link>
-          <Link to={`/productos/pizzas`}><li>Pizzas</li></Link>
-          <Link to={`/productos/medallones`}><li>Medallones</li></Link>
-          <Link to={`/productos/postres`}><li>Postres</li></Link> */}
         </ul>
-        {/* <input className="ms-1" type="search" onChange={(e) => setSearch(e.target.value)} /> */}
       </div>
 
-      <div className="row">
+      <div className="row justify-content-center">
         {products && products.length ? (
           filtro.map((producto) => (
             <Item
@@ -210,8 +202,8 @@ const ItemList = ({ items }) => {
               Cargando productos...
             </p>
             <div
-              className="text-center d-flex align-items-center"
-              style={{ height: "50vh" }}
+              className="text-center d-flex align-items-center justify-content-center"
+              style={{ height: "80vh" }}
             >
               <div className="spinner-grow text-light" role="status">
                 <span className="visually-hidden">Loading...</span>

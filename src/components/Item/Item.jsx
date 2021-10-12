@@ -22,6 +22,7 @@ const Item = ({id, nombre, stock, img, price }) => {
           <p className="text-center">${price}</p>
         </div>
         <ItemCount stock={stock} initial={0} onAdd={onAdd} />
+        <Link className="btn btn-info btn-ver-producto" to={`/productos/${id}`}>Ver producto</Link>
       </div>
     </div>
   );

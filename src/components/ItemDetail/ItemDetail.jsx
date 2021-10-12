@@ -1,15 +1,21 @@
 import React from 'react'
 
-const ItemDetail = ({id}) => {
+import "./ItemDetail.css" 
+
+const ItemDetail = ({nombre, img, descripcion, precio, stock}) => {
     return (
-        <div className="ItemDetal">
-            <h3 className="text-light">Item con id {id}</h3>
-            <div>
-                {/* <h4>{nombre}</h4>
+        <div className="ItemDetail row d-flex align-items-center">
+            <div className="col-lg-6 col-md-6 col-sm-12 divImg">
+                
                 <img src={img} alt="..." />
-                <p>{descripcion}</p> */}
+                
             </div>
-            
+            <div className="col-lg-6 col-md-6 col-sm-12 divText">
+                <h3>{nombre}</h3>
+                <p className="w-50">Descripcion: <br /> {descripcion}</p>
+                <p>${precio}</p>
+                <p>Disponibles: {stock}</p>
+            </div>
 
         </div>
     )

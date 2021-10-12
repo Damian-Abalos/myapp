@@ -9,9 +9,7 @@ const DetailPage = () => {
 
     return (
         <main>
-            <ItemDetailContainer id={id} 
-            // nombre={nombre} descripcion={descripcion} img={img}
-            />
+            <ItemDetailContainer id={id}/>
         </main>
     )
 }

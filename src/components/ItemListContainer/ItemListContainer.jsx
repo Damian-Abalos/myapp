@@ -6,7 +6,7 @@ import ItemList from '../ItemList/ItemList';
 
 function ItemListContainer({greeting}) {
     return (
-        <div>
+        <div className="div-ItemListContainer">
             <h2>{greeting}</h2>
             <div className="container-fluid">
             <ItemList item={Item}/>
