@@ -9,7 +9,7 @@ const DetailPage = () => {
 
     return (
         <main>
-            <ItemDetailContainer/>
+            <ItemDetailContainer id={id}/>
         </main>
     )
 }

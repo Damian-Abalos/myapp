@@ -1,28 +1,36 @@
 import React from "react";
-import './NavBar.css';
+import "./NavBar.css";
 import CartWidget from "../CartWidget/CartWidget";
-
-
-
 
 const NavBar = () => {
 
-    return (
-        <div>
-            <nav className="d-flex align-items-center justify-content-around">
-                <span><strong>Mi Tienda</strong></span>
-                <ul>
-                    <li><a href="#home">Home</a></li>                        
-                    <li><a href="#secciones">Secciones</a></li>                        
-                    <li><a href="#nosotros">Nosotros</a></li>                        
-                    <li><a href="#contacto">Contacto</a></li>                        
-                </ul>
-                <CartWidget/>
-                {/* <button onClick={()=>changeBgColor()}>.</button> */}
-            </nav>
-        </div>
-    )
-}
+
+
+  return (
+    <div>
+      <nav className="d-flex align-items-center justify-content-around">
+        <span>
+          <strong>Mi Tienda</strong>
+        </span>
+        <ul>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="#productos">Productos</a>
+          </li>
+          <li>
+            <a href="#nosotros">Nosotros</a>
+          </li>
+          <li>
+            <a href="#contacto">Contacto</a>
+          </li>
+        </ul>
+        <CartWidget />
+      </nav>
+    </div>
+  );
+};
 
 export default NavBar;
 
@@ -39,7 +47,7 @@ export default NavBar;
 //     cambiarNombre({nombre}) {
 
 //         this.setState({name:nombre})
-        
+
 //     }
 
 //     render() {
@@ -49,12 +57,12 @@ export default NavBar;
 //                 <nav className="d-flex align-items-center">
 //                     <span><strong>Mi Tienda</strong></span>
 //                     <ul>
-//                         <li><a href="#home">Home</a></li>                        
-//                         <li><a href="#secciones">Secciones</a></li>                        
-//                         <li><a href="#nosotros">Nosotros</a></li>                        
-//                         <li><a href="#contacto">Contacto</a></li> 
+//                         <li><a href="#home">Home</a></li>
+//                         <li><a href="#secciones">Secciones</a></li>
+//                         <li><a href="#nosotros">Nosotros</a></li>
+//                         <li><a href="#contacto">Contacto</a></li>
 //                         {/* test clase 5 */}
-//                         <li>{this.state.name}</li>                       
+//                         <li>{this.state.name}</li>
 //                     </ul>
 //                     <button onClick={()=>this.cambiarNombre({nombre:"Hola Juan Carlos"})}>Hola Juan Carlos</button>
 //                     <button onClick={()=>this.setState({name:"Como estas chupapija"})}>Como estas chupapija</button>

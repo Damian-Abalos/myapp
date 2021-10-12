@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import ItemCount from "../ItemCount/ItemCount";
 import "./Item.css"
 
-const Item = ({ nombre, stock, img, price }) => {
+const Item = ({id, nombre, stock, img, price }) => {
 
   const onAdd = (qty) => {
     alert(`HAS AGREGADO ${qty} ${nombre} AL CARRITO`)
@@ -15,14 +16,14 @@ const Item = ({ nombre, stock, img, price }) => {
       <div className="card miCard">
         <img src={img} className="card-img-top" alt="..." />
         <div className="card-body">
-          {/* <link to={`/productos/${id}`}>  */}
-          <h3 className="card-title">{nombre}</h3>
+          {/* <Link to={`/productos/${id}`}> */}
+            <h3 className="card-title h4 text-center">{nombre}</h3>
           {/* </link> */}
           <p className="card-text"></p>
-          <p>stock:{stock}</p> 
-          <span>${price}</span>
+          <p className="text-center">stock:{stock}</p> 
+          <p className="text-center">${price}</p>
         </div>
-        <ItemCount stock={stock} initial={1} onAdd={onAdd} />
+        <ItemCount stock={stock} initial={0} onAdd={onAdd} />
       </div>
     </div>
   );

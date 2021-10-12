@@ -1,8 +1,11 @@
 h2{
     padding-top: 1em;
+    padding-bottom: 1em;
     text-align: center;
-    color: blanchedalmond;
-    text-decoration: underline;
+    color: rgb(255, 255, 255);
+    border-bottom: 1px solid white;
+    width: 80%;
+    margin: auto;
 }
 div{
     justify-content: center;

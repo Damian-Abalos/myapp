@@ -17,12 +17,12 @@ function ItemCount({ stock, initial, onAdd }) {
   return (
     <div>
       <div id="ItemCount">
-        <button onClick={() => removeOne()}>-</button>
+        <button className="btn btn-danger btn-remove" onClick={() => removeOne()}>-</button>
         <p>{qty}</p>
-        <button onClick={() => addOne()}>+</button>
+        <button className="btn btn-primary btn-add text-center" onClick={() => addOne()}>+</button>
       </div>
       <div>
-          <button className="btnAddCart" onClick={() => onAdd(qty)}>Añadir al carrito</button>
+          <button className="btn btn-primary btnAddCart" onClick={() => onAdd(qty)}>Añadir al carrito</button>
       </div>
     </div>
   );

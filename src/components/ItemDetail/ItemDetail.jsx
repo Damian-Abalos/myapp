@@ -3,7 +3,7 @@ import React from 'react'
 const ItemDetail = ({id}) => {
     return (
         <section className="">
-            <h2>{id}</h2>
+            <h3 className="text-light">Item con id {id}</h3>
         </section>
     )
 }

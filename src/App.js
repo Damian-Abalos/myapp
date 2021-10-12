@@ -11,6 +11,7 @@ import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
 // import Api from "./components/API/Api";
 import Home from "./pages/Home";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
+import DetailPage from "./pages/DetailPage";
 // import DynamicObjects from "./components/DynamicObjects"
 // import SpreadOperators from "./components/SpreadOperator/SpreadOperators";
 
@@ -24,27 +25,30 @@ function App() {
   // }
 
   return (
-    <BrowserRouter>
-      <div
-        className="App">
-        <NavBar/>
+    <div className="App">
+      <BrowserRouter>
+        <NavBar />
         <Switch>
-          <Route exact path="">
-            <ItemListContainer greeting="Productos" />
+
+          <Route exact path="/">
+            <Home greeting="Productos"/>
           </Route>
-          <Route path="/#Home">
-            <Home/>
+
+          <Route exact path="/productos">
+            <ItemListContainer greeting="Productos/:category" />
           </Route>
-          <Route path="Productos/:id">
-            <ItemDetailContainer/>
+
+          <Route exact path="/productos/:id">
+            <DetailPage/>
           </Route>
+
         </Switch>
         {/* <MiPromise/> */}
         {/* <Comp2 title="hola mundo" button={SuperButton}></Comp2> */}
         {/* <Icon icon={faCoffee}/> */}
         {/* <button className="btn btn-primary"></button> */}
-      </div>
-    </BrowserRouter>
+      </BrowserRouter>
+    </div>
   );
 }
 

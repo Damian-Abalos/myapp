@@ -4,20 +4,18 @@
     margin: 1em auto;
     justify-content: center;
     align-items: center;
-    border: black 1px solid;
 }
-#ItemCount button{
-    width: 10%;
-    border: none;
-}
+
 #ItemCount p{
-    width: 80%;
+    width: 30%;
     text-align: center;
-    margin: 0;
+    margin: 0 10%;
+    padding: 6px ;
+    border-bottom: 1px black solid;
 }
 .btnAddCart{
     display: flex;
     margin: auto;
-    padding: 0 15%;
+    padding: 2% 15%;
 }
 

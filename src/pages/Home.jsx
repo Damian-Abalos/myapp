@@ -2,12 +2,10 @@ import React from 'react'
 import ItemListContainer from '../components/ItemListContainer/ItemListContainer'
 import NavBar from '../components/NavBar/NavBar'
 
-const home = () => {
+const home = ({greeting}) => {
     return (
         <div>
-            <h1>Home</h1>
-            <NavBar/>
-            <ItemListContainer/>
+            <ItemListContainer greeting={greeting}/>
         </div>
     )
 }
