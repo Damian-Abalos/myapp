@@ -1,29 +1,33 @@
 import React from "react";
+
 import "./NavBar.css";
 import CartWidget from "../CartWidget/CartWidget";
 
 const NavBar = () => {
-
-
-
   return (
     <div>
       <nav className="d-flex align-items-center justify-content-around">
-        <span>
-          <strong>Mi Tienda</strong>
-        </span>
+        <img src="https://i.ibb.co/N1R381J/casa-vegana-logo.gif" alt=""/>
         <ul>
           <li>
-            <a href="/">Home</a>
+            <a className="btn" href="/">
+              Home
+            </a>
           </li>
           <li>
-            <a href="#productos">Productos</a>
+            <a className="btn" href="#productos">
+              Productos
+            </a>
           </li>
           <li>
-            <a href="#nosotros">Nosotros</a>
+            <a className="btn" href="#nosotros">
+              Nosotros
+            </a>
           </li>
           <li>
-            <a href="#contacto">Contacto</a>
+            <a className="btn" href="#contacto">
+              Contacto
+            </a>
           </li>
         </ul>
         <CartWidget />

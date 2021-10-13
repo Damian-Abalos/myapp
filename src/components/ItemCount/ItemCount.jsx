@@ -18,7 +18,7 @@ function ItemCount({ stock, initial, onAdd }) {
     <div>
       <div id="ItemCount">
         <button className="btn btn-danger btn-remove" onClick={() => removeOne()}>-</button>
-        <p>{qty}</p>
+        <p className="text-dark">{qty}</p>
         <button className="btn btn-primary btn-add text-center" onClick={() => addOne()}>+</button>
       </div>
       <div>
