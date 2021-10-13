@@ -1,15 +1,18 @@
 import React from 'react'
+import { useParams } from 'react-router';
 
 import './ItemListContainer.css'
-import Item from '../Item/Item';
 import ItemList from '../ItemList/ItemList';
 
 function ItemListContainer({greeting}) {
+
+    let {category} = useParams();
+    
     return (
         <div className="div-ItemListContainer">
             <h2>{greeting}</h2>
             <div className="container-fluid">
-            <ItemList item={Item}/>
+            <ItemList category={category}/>
             </div>
         </div>
     )

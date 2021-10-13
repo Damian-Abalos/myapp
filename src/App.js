@@ -7,10 +7,7 @@ import "./components/NavBar/NavBar";
 import NavBar from "./components/NavBar/NavBar";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import Home from "./pages/Home";
-import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import DetailPage from "./pages/DetailPage";
-// import DynamicObjects from "./components/DynamicObjects"
-// import SpreadOperators from "./components/SpreadOperator/SpreadOperators";
 
 function App() {
 
@@ -24,12 +21,12 @@ function App() {
             <Home greeting="Productos"/>
           </Route>
 
-          <Route exact path="/productos">
-            <ItemListContainer greeting="Productos/:category" />
-          </Route>
-
           <Route exact path="/productos/:id">
             <DetailPage/>
+          </Route>
+
+          <Route exact path="/categorias/:category">
+            <ItemListContainer greeting="Productos" />
           </Route>
 
         </Switch>
