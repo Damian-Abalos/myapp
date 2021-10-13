@@ -115,11 +115,7 @@ const ItemList = ({ category }) => {
   const [products, setProducts] = useState([]);
   const getProducts = new Promise((resolve, reject) => {
     setTimeout(() => {
-      if (category == undefined) {
-        resolve(misProductos);
-      } else {
-        resolve(filtrarCategoria);
-      }
+      {category == undefined ? resolve(misProductos) : resolve(filtrarCategoria)}
     }, 3000);
   });
 
