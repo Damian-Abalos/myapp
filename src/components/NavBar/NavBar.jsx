@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import "./NavBar.css";
 import CartWidget from "../CartWidget/CartWidget";
@@ -6,15 +7,17 @@ import CartWidget from "../CartWidget/CartWidget";
 const NavBar = () => {
   return (
     <div>
-      <nav className="d-flex align-items-center justify-content-around">
-        <img src="https://i.ibb.co/N1R381J/casa-vegana-logo.gif" alt=""/>
-        <ul>
+      <nav className="row align-items-center">
+        <div className="col-lg-4 col-md-4 col-sm-12 m-auto d-flex">
+          <img src="https://i.ibb.co/N1R381J/casa-vegana-logo.gif" alt="Logo Casa Vegana"/>
+        </div>
+        <ul className="col-lg-4 col-md-4 col-sm-12">
           <li>
-            <a className="btn" href="/">
+            <Link to="/" className="btn">
               Home
-            </a>
+            </Link>
           </li>
-          <li>
+          {/* <li>
             <a className="btn" href="#productos">
               Productos
             </a>
@@ -28,9 +31,9 @@ const NavBar = () => {
             <a className="btn" href="#contacto">
               Contacto
             </a>
-          </li>
+          </li> */}
         </ul>
-        <CartWidget />
+        <div className="col-lg-4 col-md-4 col-sm-12 m-auto d-flex"><CartWidget /></div>        
       </nav>
     </div>
   );

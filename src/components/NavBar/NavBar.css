@@ -1,8 +1,12 @@
 nav{
-  background-color: rgb(172, 102, 138);
+  background-color: rgb(252, 255, 205);
+  padding: 1em 0;
+  border-bottom: 2px black solid;
 }
 nav img{
-  width: 6%;
+  max-width: 25%;
+  height: 50%;
+  justify-content: center;
 
 }
 nav ul{
@@ -13,7 +17,7 @@ nav ul{
   justify-content: space-around!important;
 }
 nav li{
-  background-color: rgb(190, 221, 155);
+  background-color: rgb(243, 255, 227);
   list-style: none;
   padding: 5px;
   border: solid 1px black;

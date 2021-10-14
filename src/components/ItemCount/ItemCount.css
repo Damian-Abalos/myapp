@@ -2,7 +2,7 @@
     width: 80%;
     display: flex;
     margin: 1em auto;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -14,8 +14,12 @@
     border-bottom: 1px black solid;
 }
 .btnAddCart{
+
+    justify-content: center;
+    text-align: center;
     display: flex;
     margin: auto;
-    padding: 2% 15%;
+    width: 80%;
+
 }
 

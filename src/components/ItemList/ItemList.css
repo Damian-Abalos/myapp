@@ -1,0 +1,16 @@
+.ul-productos {
+    display: flex;
+}
+
+.mi-div-item{
+    padding-top: 1em;
+}
+
+.div-filtros{
+    padding-bottom: 1em;
+    border-bottom: 1px solid black;
+}
+
+.ul-productos li{
+    list-style: none;
+}

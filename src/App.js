@@ -8,6 +8,7 @@ import NavBar from "./components/NavBar/NavBar";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import Home from "./pages/Home";
 import DetailPage from "./pages/DetailPage";
+// import Events from "./components/Events/Events";
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
         <Switch>
 
           <Route exact path="/">
+            {/* <Events/> */}
             <Home greeting="Productos"/>
           </Route>
 

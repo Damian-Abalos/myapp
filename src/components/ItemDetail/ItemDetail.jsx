@@ -1,9 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import ItemCount from "../ItemCount/ItemCount";
 
 import "./ItemDetail.css";
 
 const ItemDetail = ({ nombre, img, descripcion, precio, stock }) => {
+
+  
   return (
     <div className="ItemDetail row d-flex align-items-center">
       <div className="col-lg-6 col-md-6 col-sm-12 divImg">
@@ -17,6 +20,11 @@ const ItemDetail = ({ nombre, img, descripcion, precio, stock }) => {
         <p>${precio}</p>
         <p>Disponibles: {stock}</p>
       </div>
+      <div className="ItemCountDiv w-50 m-auto">
+        <ItemCount initial={0} stock={stock} nombre={nombre}/>
+      </div>
+      
+      
       <Link className="d-block text-center mt-5" to="/">
         <button className="btn-primary">volver</button>
       </Link>

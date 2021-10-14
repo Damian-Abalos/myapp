@@ -1,18 +1,23 @@
 import React, { useState } from "react";
+import { higherThanStock } from "../../helpers";
 import "./ItemCount.css";
 
-function ItemCount({ stock, initial, onAdd }) {
+function ItemCount({ stock, initial, nombre}) {
 
   const [qty, setQty] = useState(initial);
 
   const addOne = () => {
-    if (qty < stock) setQty(qty + 1);
+    if (!higherThanStock(qty,stock)) setQty(qty + 1);
   };
 
   const removeOne = () => {
-    if (qty > 0) setQty(qty - 1);
+    if (higherThanStock(qty, 1)) setQty(qty - 1);
   };
 
+  const onAdd = (qty) => {
+    alert(`HAS AGREGADO ${qty} ${nombre} AL CARRITO`)
+
+  }
   
   return (
     <div>
