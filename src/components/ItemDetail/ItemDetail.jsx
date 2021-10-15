@@ -1,11 +1,28 @@
-import React from "react";
+import React, {useState} from "react";
 import { Link } from "react-router-dom";
-import ItemCount from "../ItemCount/ItemCount";
+import Swal from 'sweetalert2'
 
+import ItemCount from "../ItemCount/ItemCount";
+import { useCartContext } from "../../context/cartContext";
 import "./ItemDetail.css";
 
-const ItemDetail = ({ nombre, img, descripcion, precio, stock }) => {
+const ItemDetail = ({ nombre, img, descripcion, precio, stock}) => {
 
+  // const {cartList, agregarItem} = useCartContext()
+
+  // const [botonActivo, setBotonActivo] = useState(false) 
+
+  // function apagarBoton() {
+  //   setBotonActivo(true)
+  // }
+
+  // const Swal = require('sweetalert2')
+
+  // const onAdd = (qty) => {
+  //   Swal.fire(`HAS AGREGADO ${qty} ${nombre} AL CARRITO`)
+  //   agregarItem({item:nombre , cantidad: qty , img:img})
+  //   apagarBoton()
+  // }
   
   return (
     <div className="ItemDetail row d-flex align-items-center">
@@ -14,19 +31,15 @@ const ItemDetail = ({ nombre, img, descripcion, precio, stock }) => {
       </div>
       <div className="col-lg-6 col-md-6 col-sm-12 divText">
         <h3>{nombre}</h3>
-        <p className="w-50">
-          Descripcion: <br /> {descripcion}
-        </p>
+        <p className="w-50">Descripcion:<br/>{descripcion}</p>
         <p>${precio}</p>
         <p>Disponibles: {stock}</p>
       </div>
       <div className="ItemCountDiv w-50 m-auto">
-        <ItemCount initial={0} stock={stock} nombre={nombre}/>
-      </div>
-      
-      
+        <ItemCount initial={0} stock={stock} nombre={nombre} img={img}/>
+      </div>      
       <Link className="d-block text-center mt-5" to="/">
-        <button className="btn-primary">volver</button>
+        <button className="btn btn-primary">volver</button>
       </Link>
     </div>
   );

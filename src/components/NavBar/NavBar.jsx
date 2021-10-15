@@ -8,7 +8,7 @@ const NavBar = () => {
   return (
     <div>
       <nav className="row align-items-center">
-        <div className="col-lg-4 col-md-4 col-sm-12 m-auto d-flex">
+        <div className="col-lg-4 col-md-4 col-sm-12 m-auto d-flex justify-content-center">
           <img src="https://i.ibb.co/N1R381J/casa-vegana-logo.gif" alt="Logo Casa Vegana"/>
         </div>
         <ul className="col-lg-4 col-md-4 col-sm-12">
@@ -33,7 +33,11 @@ const NavBar = () => {
             </a>
           </li> */}
         </ul>
-        <div className="col-lg-4 col-md-4 col-sm-12 m-auto d-flex"><CartWidget /></div>        
+        <div className="col-lg-4 col-md-4 col-sm-12 m-auto d-flex justify-content-center">
+          <Link to="/cart"> 
+            <CartWidget />
+          </Link>
+        </div>        
       </nav>
     </div>
   );

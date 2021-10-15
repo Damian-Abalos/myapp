@@ -5,7 +5,6 @@ import "./ItemList.css"
 import Item from "../Item/Item";
 
 const ItemList = ({ category }) => {
-  console.log(category);
   const misProductos = [
     {
       id: 1,
@@ -109,9 +108,7 @@ const ItemList = ({ category }) => {
     },
   ];
 
-  let filtrarCategoria = misProductos.filter(
-    (items) => items.category == category
-  );
+  let filtrarCategoria = misProductos.filter((items) => items.category == category);
 
   const [products, setProducts] = useState([]);
   const getProducts = new Promise((resolve, reject) => {
@@ -155,7 +152,6 @@ const ItemList = ({ category }) => {
           </Link></li>
         </ul>
       </div>
-
       <div className="row justify-content-center mi-div-item">
         {products && products.length ? (
           products.map((producto) => (
@@ -170,13 +166,8 @@ const ItemList = ({ category }) => {
           ))
         ) : (
           <div>
-            <p className="text-dark text-center w-100">
-              Cargando productos...
-            </p>
-            <div
-              className="text-center d-flex align-items-center justify-content-center"
-              style={{ height: "80vh" }}
-            >
+            <p className="text-dark text-center w-100">Cargando productos...</p>
+            <div className="text-center d-flex align-items-center justify-content-center" style={{ height: "80vh" }}>
               <div className="spinner-grow text-dark" role="status">
                 <span className="visually-hidden">Loading...</span>
               </div>

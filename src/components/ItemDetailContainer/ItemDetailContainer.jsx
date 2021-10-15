@@ -206,11 +206,8 @@ const ItemDetailContainer = ({ id }) => {
 
   useEffect(() => {
     const getItem = misProductos.find((item) => item.id == id);
-    console.log(id);
     getItem ? setProducto(getItem) : alert("error");
   }, []);
-
-  console.log({ id });
 
   return (
     <div className="text-center">

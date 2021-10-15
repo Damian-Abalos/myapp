@@ -8,18 +8,19 @@ import NavBar from "./components/NavBar/NavBar";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import Home from "./pages/Home";
 import DetailPage from "./pages/DetailPage";
-// import Events from "./components/Events/Events";
+import CartContextProvider from "../src/context/cartContext"
+import Cart from "./components/Cart/Cart";
 
 function App() {
-
+ 
   return (
+    <CartContextProvider> 
     <div className="App">
       <BrowserRouter>
         <NavBar />
         <Switch>
 
           <Route exact path="/">
-            {/* <Events/> */}
             <Home greeting="Productos"/>
           </Route>
 
@@ -31,9 +32,14 @@ function App() {
             <ItemListContainer greeting="Productos" />
           </Route>
 
+          <Route exact path="/cart">
+            <Cart/>
+          </Route>
+
         </Switch>
       </BrowserRouter>
     </div>
+    </CartContextProvider>
   );
 }
 
