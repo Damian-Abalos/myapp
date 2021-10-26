@@ -44,7 +44,7 @@ const Cart = () => {
       ) : (
         <div>
             <Link className="btn btn-primary m-3" to="">Seguir comprando</Link>
-            <button className="btn btn-danger m-3" onClick={() => vaciarCart()}>Vaciar carrito</button>
+            <button className="btn btn-danger m-3" onClick={() => vaciarCart()}>Vaciar carrito</button> 
         </div>
         
       )}
