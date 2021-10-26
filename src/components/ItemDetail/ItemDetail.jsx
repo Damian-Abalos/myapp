@@ -6,7 +6,7 @@ import ItemCount from "../ItemCount/ItemCount";
 import { useCartContext } from "../../context/cartContext";
 import "./ItemDetail.css";
 
-const ItemDetail = ({ nombre, img, descripcion, precio, stock}) => {
+const ItemDetail = ({id, nombre, img, descripcion, precio, stock}) => {
 
   // const {cartList, agregarItem} = useCartContext()
 
@@ -36,7 +36,7 @@ const ItemDetail = ({ nombre, img, descripcion, precio, stock}) => {
         <p>Disponibles: {stock}</p>
       </div>
       <div className="ItemCountDiv w-50 m-auto">
-        <ItemCount initial={0} stock={stock} nombre={nombre} img={img}/>
+        <ItemCount initial={0} stock={stock} nombre={nombre} img={img} precio={precio} id={id}/>
       </div>      
       <Link className="d-block text-center mt-5" to="/">
         <button className="btn btn-primary">volver</button>

@@ -213,6 +213,7 @@ const ItemDetailContainer = ({ id }) => {
     <div className="text-center">
       {producto && products.length ? (
         <ItemDetail
+          id={producto.id}
           nombre={producto.nombre}
           img={producto.img}
           descripcion={producto.descripcion}

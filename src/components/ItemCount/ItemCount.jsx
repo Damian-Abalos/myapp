@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Swal from 'sweetalert2'
 
 import { useCartContext } from "../../context/cartContext";
 import { higherThanStock } from "../../helpers";
 import "./ItemCount.css";
 
-function ItemCount({ stock, initial, nombre, img}) {
+function ItemCount({id, stock, initial, nombre, img, precio}) {
 
-  const Swal = require('sweetalert2')
+  
 
   const {cartList, agregarItem} = useCartContext()
 
@@ -23,8 +22,8 @@ function ItemCount({ stock, initial, nombre, img}) {
   };
   
   const onAdd = (qty) => {
-    Swal.fire(`HAS AGREGADO ${qty} ${nombre} AL CARRITO`)
-    agregarItem({item:nombre , cantidad: qty , img:img})
+    
+    agregarItem({item:nombre , cantidad:qty , img:img, price:precio, stock:stock, id:id})
     apagarBoton()
   }
   

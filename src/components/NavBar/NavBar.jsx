@@ -5,6 +5,8 @@ import "./NavBar.css";
 import CartWidget from "../CartWidget/CartWidget";
 
 const NavBar = () => {
+
+
   return (
     <div>
       <nav className="row align-items-center">
