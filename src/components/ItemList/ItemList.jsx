@@ -137,7 +137,17 @@ const ItemList = memo(
       getProductsFromDB();
     }, [category]);
 
+
+
+    
+
+
+
+
+
+
     return (
+
       <div className="mt-3">
         <div className="text-center d-flex align-items-center justify-content-center row div-filtros">
           <p className="m-3 col-12">Filtrar productos</p>
