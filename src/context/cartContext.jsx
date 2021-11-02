@@ -17,7 +17,7 @@ function CartContextProvider({ children }) {
     console.log(cartList)
 
     function setearCartState() {
-        if (cantidadItems == 0) {
+        if (cantidadItems === 0) {
             setCartState("none")
         } else {
             setCartState("flex")
@@ -33,7 +33,7 @@ function CartContextProvider({ children }) {
             setCantidadItems(cantidadItems + item.cantidad);
             setSubTotal(subTotal + (item.cantidad * item.price))
             setearCartState()
-            Swal.fire(`HAS AGREGADO ${item.cantidad} ${item.item} AL CARRITO`)
+            Swal.fire(`Has agregado ${item.cantidad} ${item.item} al carrito`)
         } else {
             Swal.fire(`Lo sentimos, no nos quedan mas ${item.item} disponibles por el momento`)
         }
@@ -42,16 +42,21 @@ function CartContextProvider({ children }) {
         setCartList([...cartList, item])
         setSubTotal(subTotal + (item.cantidad * item.price))
         setearCartState()
-        Swal.fire(`HAS AGREGADO ${item.cantidad} ${item.item} AL CARRITO`)
+        Swal.fire(`Has agregado ${item.cantidad} ${item.item} al carrito`)
     }}
 
     const eliminarItem = (item) => {
-        let productoAEliminar = cartList[cartList.findIndex(element => element.item === item.item)];
+        let productoAEliminarIndex = cartList.findIndex(element => element.item === item.item);
         setCantidadItems(cantidadItems - item.cantidad)
-        setCartList(cartList.splice(productoAEliminar, 1));
+
+        const nuevoCartList = [...cartList];
+
+        nuevoCartList.splice(productoAEliminarIndex, 1);
+        setCartList(nuevoCartList)
+
         setSubTotal(subTotal - (item.cantidad * item.price));
         setearCartState()
-        if(subTotal <= 0 || subTotal == 0){
+        if(subTotal <= 0 || subTotal === 0){
             setCartList([])
             setSubTotal(0)
             setCantidadItems(0)
