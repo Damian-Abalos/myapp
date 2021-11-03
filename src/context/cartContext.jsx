@@ -1,7 +1,5 @@
 import { createContext, useContext , useState } from "react";
 
-import Swal from 'sweetalert2'
-
 const CartContext = createContext([]);
 
 export const useCartContext = () => useContext(CartContext)
@@ -14,7 +12,6 @@ function CartContextProvider({ children }) {
     const [cantidadItems, setCantidadItems] = useState(0)
     const [cartList, setCartList] = useState([]);
     const [subTotal, setSubTotal] = useState(0);
-    console.log(cartList)
 
     function setearCartState() {
         if (cantidadItems === 0) {

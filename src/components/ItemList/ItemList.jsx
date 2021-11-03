@@ -1,61 +1,39 @@
 import React, { useState, useEffect, memo } from "react";
 import { Link } from "react-router-dom";
-import { getFirestore } from '../../services/getFirebase';
+import { getFirestore } from "../../services/getFirebase";
 
 import "./ItemList.css";
 import Item from "../Item/Item";
 
 const ItemList = memo(
-
   ({ category }) => {
-
-    // const [item, setItem] = useState({});
+    const [loading, setLoading] = useState(true);
     const [items, setItems] = useState([]);
-    const [products, setProducts] = useState([]);
-    
+
     useEffect(() => {
-
-      const db = getFirestore()
-
-      db.collection('items').get() //traigo toda la coleccion
-      .then(resp => setItems(resp.docs.map(it => ({id: it.id, ...it.data()}) ) ) )
-      // .then(getProductsFromDB())
-
-      // db.collection('items').doc('4EaLBhmpanu26iTPluZe').get() //traigo un item
-      // .then(resp => setItem({id: resp.id, ...resp.data()}))
-    }, [category]);
-
-    console.log(category)
-    console.log(items)
-
-
-    let filtrarCategoria = items.filter(
-      (items) => items.category === items.categoryId
-    );
-    
-    const getProducts = new Promise((resolve, reject) => {
-          category === undefined
-            ? resolve(items)
-            : resolve(filtrarCategoria);
-    });
-
-    const getProductsFromDB = async () => {
-      try {
-        const result = await getProducts;
-        setProducts(result);
-        // console.log(result);
-      } catch (error) {
-        console.log(error);
+      if (category) {
+        const db = getFirestore();
+        db.collection("items")
+          .where("categoryId", "==", category)
+          .get()
+          .then((resp) =>
+            setItems(resp.docs.map((it) => ({ id: it.id, ...it.data() })))
+          )
+          .catch((err) => console.log(err))
+          .finally(() => setLoading(false));
+      } else {
+        const db = getFirestore();
+        db.collection("items")
+          .get() //traigo toda la coleccion
+          .then((resp) =>
+            setItems(resp.docs.map((it) => ({ id: it.id, ...it.data() })))
+          )
+          .catch((err) => console.log(err))
+          .finally(() => setLoading(false));
       }
-    };
-
-    useEffect(() => {
-      getProductsFromDB();
     }, [category]);
-    console.log(products)
 
     return (
-
       <div className="mt-3">
         <div className="text-center d-flex align-items-center justify-content-center row div-filtros">
           <p className="m-3 col-12">Filtrar productos</p>
@@ -88,18 +66,7 @@ const ItemList = memo(
           </ul>
         </div>
         <div className="row justify-content-center mi-div-item">
-          {products && products.length ? (
-            products.map((items) => (
-              <Item
-                id={items.id}
-                nombre={items.title}
-                stock={items.stock}
-                img={items.image}
-                price={items.price}
-                descripcion={items.descripcion}
-              />
-            ))
-          ) : (
+          {loading ? (
             <div>
               <p className="text-dark text-center w-100">
                 Cargando productos...
@@ -113,6 +80,17 @@ const ItemList = memo(
                 </div>
               </div>
             </div>
+          ) : (
+            items.map((items) => (
+              <Item
+                id={items.id}
+                nombre={items.title}
+                stock={items.stock}
+                img={items.image}
+                price={items.price}
+                descripcion={items.descripcion}
+              />
+            ))
           )}
         </div>
       </div>

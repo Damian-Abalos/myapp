@@ -10,7 +10,6 @@ import Home from "./pages/Home";
 import DetailPage from "./pages/DetailPage";
 import CartContextProvider from "../src/context/cartContext"
 import Cart from "./components/Cart/Cart";
-import LoadingComponent from "./components/pruebas/LoadingComponent/LoadingComponent";
 
 function App() {
  

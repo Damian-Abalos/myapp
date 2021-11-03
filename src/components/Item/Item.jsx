@@ -1,9 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import ItemCount from "../ItemCount/ItemCount";
-import { useCartContext } from "../../context/cartContext";
-
 import "./Item.css"
 
 const Item = ({id, nombre, stock, img, price }) => {

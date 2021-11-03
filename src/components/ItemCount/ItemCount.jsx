@@ -7,9 +7,7 @@ import "./ItemCount.css";
 
 function ItemCount({id, stock, initial, nombre, img, precio}) {
 
-  
-
-  const {cartList, agregarItem} = useCartContext()
+  const {agregarItem} = useCartContext()
 
   const [qty, setQty] = useState(initial);
 
@@ -22,7 +20,6 @@ function ItemCount({id, stock, initial, nombre, img, precio}) {
   };
   
   const onAdd = (qty) => {
-    
     agregarItem({item:nombre , cantidad:qty , img:img, price:precio, stock:stock, id:id})
     apagarBoton()
   }
@@ -52,8 +49,6 @@ function ItemCount({id, stock, initial, nombre, img, precio}) {
         <Link to="/" className="btn btn-primary m-3">Seguir comprando</Link>
       </div> 
       )}
-      
-           
     </div>
   );
 }
