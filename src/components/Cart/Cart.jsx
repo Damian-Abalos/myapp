@@ -1,35 +1,44 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../../context/cartContext";
-// import { getFirestore } from "../../services/getFirebase";
-// import { getFirestore } from '../../services/getFirebase';
+import { getFirestore } from "../../services/getFirebase";
+
+// import {useState} from 'react'
+// import { useCartContext } from '../../context/cartContext'
+import firebase from 'firebase/app'
+import 'firebase/firestore'
+
 
 const Cart = () => {
   const { cartList, eliminarItem, vaciarCart, subTotal } = useCartContext();
 
-  // const generarCompra = () => {
-  //   const compra = {};
+  const generarCompra = () => {
 
-  //   // const db = getFirestore()
 
-  //   compra.buyer = {name:'Damian', phone:'1533710828', email:'damianabalos@hotmail.com'};
-  //   compra.total = subTotal;
-  //   compra.items = cartList.map(cartItem => {
-  //     const id = cartItem.item.id;
-  //     const title = cartItem.item.nombre;
-  //     const price = cartItem.item.precio * cartItem.item.cantidad;
+    let ordenDeCompra = {};
 
-  //     return {id, title, price}
+    // const db = getFirestore()
+    // compra.date = firebase.firestore.Timestamp.fromDate(new Date()); 
+    ordenDeCompra.buyer = {name:'Damian', phone:'1533710828', email:'damianabalos@hotmail.com'};
+    ordenDeCompra.total = subTotal;
+    ordenDeCompra.items = cartList.map(cartItem => {
+      const id = cartItem.id;
+      const title = cartItem.item;
+      const price = cartItem.price * cartItem.cantidad;
 
-  //   })
-  // }
+      return {id, title, price}
 
-  // const dbQuery = getFirestore()
-  // const compraQuery = dbQuery.collection('compras')
-  // compraQuery.add(compra)
-  // .then(result => console.log(result))
-  // .catch(err => console.log(err))
+    })
+  
+    console.log(ordenDeCompra)
 
+  const dbQuery = getFirestore()
+  const compraQuery = dbQuery.collection('Ordenes De Compra')
+  compraQuery.add(ordenDeCompra)
+  .then(result => alert(`su id de compra es ${result.id}`))
+  .catch(err => console.log(err))
+
+  }
   return (
       
     <div className="text-center" style={{width:"50%", margin:"auto"}}>
@@ -74,12 +83,8 @@ const Cart = () => {
         
       )}
       <div>
-        <button
-        //  onClick={()=>generarCompra()}
-         >Terminar compra</button>
+        <button onClick={()=>generarCompra()}>Terminar compra</button>
       </div>
-      
-      
     </div>
   );
 };

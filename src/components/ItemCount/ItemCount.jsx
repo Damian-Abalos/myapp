@@ -62,7 +62,7 @@ function ItemCount({ id, stock, initial, nombre, img, precio }) {
           </div>
           <div>
             <button
-              // disabled={habilitarBoton}
+              disabled={qty===0}
               className="btn btn-primary btnAddCart"
               onClick={() => onAdd(qty)}
             >
