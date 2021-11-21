@@ -1,4 +1,4 @@
-import { createContext, useContext , useState } from "react";
+import { createContext, useContext , useState} from "react";
 
 const CartContext = createContext([]);
 
@@ -7,18 +7,12 @@ export const useCartContext = () => useContext(CartContext)
 function CartContextProvider({ children }) {
 
     const Swal = require('sweetalert2')
-
-    const [cartState, setCartState] = useState ("none")
     const [cantidadItems, setCantidadItems] = useState(0)
     const [cartList, setCartList] = useState([]);
     const [subTotal, setSubTotal] = useState(0);
 
-    function setearCartState() {
-        if (cantidadItems === 0) {
-            setCartState("none")
-        } else {
-            setCartState("flex")
-        }
+    const iconCart = () => {
+        return cantidadItems
     }
 
     const agregarItem =  (item) => {
@@ -29,7 +23,6 @@ function CartContextProvider({ children }) {
             setCartList([...cartList]);
             setCantidadItems(cantidadItems + item.cantidad);
             setSubTotal(subTotal + (item.cantidad * item.price))
-            setearCartState()
             Swal.fire(`Has agregado ${item.cantidad} ${item.item} al carrito`)
         } else {
             Swal.fire(`Lo sentimos, no nos quedan mas ${item.item} disponibles por el momento`)
@@ -38,7 +31,6 @@ function CartContextProvider({ children }) {
         setCantidadItems(cantidadItems + item.cantidad)
         setCartList([...cartList, item])
         setSubTotal(subTotal + (item.cantidad * item.price))
-        setearCartState()
         Swal.fire(`Has agregado ${item.cantidad} ${item.item} al carrito`)
     }}
 
@@ -52,27 +44,24 @@ function CartContextProvider({ children }) {
         setCartList(nuevoCartList)
 
         setSubTotal(subTotal - (item.cantidad * item.price));
-        setearCartState()
         if(subTotal <= 0 || subTotal === 0){
             setCartList([])
             setSubTotal(0)
             setCantidadItems(0)
         }
-        
     }
 
     function vaciarCart() {
         setCartList([])
         setSubTotal(0)
         setCantidadItems(0)
-        setearCartState()
     }
 
     return (
         <CartContext.Provider
             value={{
+                iconCart,
                 cartList,
-                cartState,
                 cantidadItems,
                 agregarItem,
                 eliminarItem,

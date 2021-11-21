@@ -7,9 +7,6 @@ import ItemList from '../ItemList/ItemList';
 function ItemListContainer({greeting}) {
 
     let {category} = useParams();
-
-
-    
     
     return (
         <div className="div-ItemListContainer">

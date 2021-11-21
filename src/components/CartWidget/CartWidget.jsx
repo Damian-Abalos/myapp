@@ -1,23 +1,15 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
-import { useCartContext } from "../../context/cartContext";
-
-const CartWidget = (Icon) => {
-    
-    const {cantidadItems, cartState} = useCartContext()
-
+const CartWidget = () => {
     return(
         <div 
-            style={{fontSize:"50px", display:`${cartState}`}}
+            style={{fontSize:"50px"}}
             className="align-items-center"
         >
-            
-            {cantidadItems}
             <FontAwesomeIcon className="ms-2"
-                icon={faCartPlus}
-                color="black"
+                icon={faShoppingCart}
                 size="sm"/>
         </div>
         

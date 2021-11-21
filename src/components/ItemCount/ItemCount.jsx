@@ -36,9 +36,6 @@ function ItemCount({ id, stock, initial, nombre, img, precio }) {
     setBotonActivo(true);
   }
 
-  // const [habilitarBoton, setHabilitarBoton] = useState();
-  // {!qty ? setHabilitarBoton("false") : setHabilitarBoton("true")}
-
   return (
     <div>
       {!botonActivo ? (
@@ -72,11 +69,11 @@ function ItemCount({ id, stock, initial, nombre, img, precio }) {
         </div>
       ) : (
         <div className="text-center">
-          <Link to="/cart" className="btn btn-success m-3">
-            Terminar mi Compra
-          </Link>
           <Link to="/" className="btn btn-primary m-3">
             Seguir comprando
+          </Link>
+          <Link to="/cart" className="btn btn-success m-3">
+            Terminar mi Compra
           </Link>
         </div>
       )}

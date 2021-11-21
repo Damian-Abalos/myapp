@@ -35,31 +35,39 @@ const ItemList = memo(
 
     return (
       <div className="mt-3">
-        <div className="text-center d-flex align-items-center justify-content-center row div-filtros">
-          <p className="m-3 col-12">Filtrar productos</p>
-          <ul className="justify-content-center ul-productos">
+        <div class="dropdown m-auto text-center">
+          <button
+            class="btn btn-secondary dropdown-toggle"
+            type="button"
+            id="dropdownMenuButton1"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Filtrar productos
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
             <li>
-              <Link to={`/`} className="text-dark m-4">
+              <Link to={`/`} className="dropdown-item">
                 <u>Todos</u>
               </Link>
             </li>
             <li>
-              <Link to={`/categorias/toques`} className="text-dark m-4">
+              <Link to={`/categorias/toques`} className="dropdown-item">
                 <u>Toques</u>
               </Link>
             </li>
             <li>
-              <Link to={`/categorias/pizza`} className="text-dark m-4">
+              <Link to={`/categorias/pizza`} className="dropdown-item">
                 <u>Pizzas</u>
               </Link>
             </li>
             <li>
-              <Link to={`/categorias/medallones`} className="text-dark m-4">
+              <Link to={`/categorias/medallones`} className="dropdown-item">
                 <u>Medallones</u>
               </Link>
             </li>
             <li>
-              <Link to={`/categorias/postres`} className="text-dark m-4">
+              <Link to={`/categorias/postres`} className="dropdown-item">
                 <u>Postres</u>
               </Link>
             </li>

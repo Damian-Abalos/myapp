@@ -18,7 +18,6 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <NavBar />
-        {/* <LoadingComponent/> */}
         <Switch>
 
           <Route exact path="/">
